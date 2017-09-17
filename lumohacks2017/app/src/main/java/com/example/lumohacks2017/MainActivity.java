@@ -23,9 +23,6 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import com.itextpdf.*;
-import com.itextpdf.text.Document;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -55,8 +52,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Document document = new Document();
-
         // Button to open signature panel
         btn_get_sign = (Button) findViewById(R.id.signature);
 
@@ -81,18 +76,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
-        Uri path = Uri.parse("file://" + email_file);
-        Intent emailIntent = new Intent(Intent.ACTION_SEND);
-// set the type to 'email'
-        emailIntent.setType("image/*");
-        String to[] = {"yangjy259@gmail.com"};
-        emailIntent.putExtra(Intent.EXTRA_EMAIL, to);
-// the attachment
-        emailIntent.putExtra(Intent.EXTRA_STREAM, path);
-// the mail subject
-        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Health Care No.: 9AS35FNS3F");
-        startActivity(Intent.createChooser(emailIntent , "Send email..."));
     }
     // Function for Digital Signature
     public void dialog_action() {
@@ -119,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
 
             public void onClick(View v) {
 
+
                 Log.v("tag", "Panel Saved");
                 view.setDrawingCacheEnabled(true);
                 mSignature.save(view, StoredPath);
@@ -126,6 +110,17 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Successfully Saved", Toast.LENGTH_SHORT).show();
                 // Calling the same class
                 recreate();
+                Uri path = Uri.parse("file://" + email_file);
+                Intent emailIntent = new Intent(Intent.ACTION_SEND);
+// set the type to 'email'
+                emailIntent.setType("image/*");
+                String to[] = {"yangjy259@gmail.com"};
+                emailIntent.putExtra(Intent.EXTRA_EMAIL, to);
+// the attachment
+                emailIntent.putExtra(Intent.EXTRA_STREAM, path);
+// the mail subject
+                emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Health Care No.: 9AS35FNS3F");
+                startActivity(Intent.createChooser(emailIntent , "Send email..."));
             }
         });
         mCancel.setOnClickListener(new View.OnClickListener() {
