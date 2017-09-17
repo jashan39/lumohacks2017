@@ -37,6 +37,4 @@ public class firstQuestion extends AppCompatActivity {
         source.put("Do you have any drug allergies?", text);
     }
 
-
-
 }

@@ -25,6 +25,7 @@
             android:layout_height="wrap_content"
             android:text="NEXT"
             android:onClick="firstQuestion"/>
+
     </LinearLayout>
 
 </LinearLayout>

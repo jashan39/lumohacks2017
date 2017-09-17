@@ -24,11 +24,16 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Font;
 import com.itextpdf.text.Image;
+import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
+import com.example.lumohacks2017.medicalHistory.*;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
@@ -129,6 +134,8 @@ public class signActivity extends AppCompatActivity {
                 // Calling the same class
                 recreate();
 
+                createPdf(medicalHistory.summaryText);
+
                 try {
                     Document document = new Document();
                     PdfWriter.getInstance(document,
@@ -163,6 +170,41 @@ public class signActivity extends AppCompatActivity {
             }
         });
         dialog.show();
+    }
+
+    public void createPdf(String text) {
+
+        Document doc = new Document();
+
+        try {
+            String path = DIRECTORY;
+
+            File dir = new File(path);
+            if(!dir.exists())
+                dir.mkdirs();
+
+            File file = new File(dir, "newFile.pdf");
+            FileOutputStream fOut = new FileOutputStream(file);
+
+            PdfWriter.getInstance(doc, fOut);
+
+            //open the document
+            doc.open();
+
+            Paragraph p1 = new Paragraph(text);
+            p1.setAlignment(Paragraph.ALIGN_CENTER);
+
+            //add paragraph to document
+            doc.add(p1);
+
+        } catch (DocumentException de) {
+            Log.e("PDFCreator", "DocumentException:" + de);
+        } catch (IOException e) {
+            Log.e("PDFCreator", "ioException:" + e);
+        }
+        finally {
+            doc.close();
+        }
     }
 
     public class signature extends View {
