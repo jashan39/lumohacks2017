@@ -38,7 +38,7 @@ public class summaryAdvanced extends AppCompatActivity {
     }
 
     public void signnow(View view) {
-        Intent intent = new Intent(this, signActivity.class);
+        Intent intent = new Intent(this, signAdvanced.class);
         startActivity(intent);
     }
 

@@ -28,7 +28,8 @@
         <activity android:name=".signActivity" />
         <activity android:name=".summaryAdvanced" />
         <activity android:name=".signAdvanced" />
-        <activity android:name=".ending"></activity>
+        <activity android:name=".ending" />
+        <activity android:name=".ad_question1"></activity>
     </application>
 
 </manifest>

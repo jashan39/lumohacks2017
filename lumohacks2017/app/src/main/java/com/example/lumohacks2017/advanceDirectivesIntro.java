@@ -16,7 +16,7 @@ public class advanceDirectivesIntro extends AppCompatActivity {
        }
 
     public void startButton(View view) {
-        Intent intent = new Intent(this, question1advdir.class);
+        Intent intent = new Intent(this, ad_question1.class);
         intent.putExtra(EXTRA_MESSAGE, "");
         startActivity(intent);
     }

@@ -20,28 +20,24 @@ public class question1advdir extends AppCompatActivity {
         setContentView(R.layout.activity_question1advdir);
 
         TextView readMore = (TextView) findViewById(R.id.textView6);
-        readMore.setText(
-                Html.fromHtml(
-                        "Despite its importance, the duty to obtain the patient's informed consent to treatment is not absolute. " +
-                                "One prominent exception refers directly to emergency care. " + "<a href=\"http://www.emed.theclinics.com/article/S0733-8627(05)70062-6/abstract\">Read more...</a>"));
-        readMore.setMovementMethod(LinkMovementMethod.getInstance());
+        //readMore.setText(
+        //        Html.fromHtml(
+        //                "Despite its importance, the duty to obtain the patient's informed consent to treatment is not absolute. " +
+        //                        "One prominent exception refers directly to emergency care. " + "<a href=\"http://www.emed.theclinics.com/article/S0733-8627(05)70062-6/abstract\">Read more...</a>"));
+        //readMore.setMovementMethod(LinkMovementMethod.getInstance());
     }
 
     public void sendMessageYes(View view) {
         Intent intent = new Intent(this, question2advdir.class);
-        intent.putExtra(EXTRA_MESSAGE, "");
-        Button button = (Button) findViewById(R.id.button8);
-        String text = (String)button.getText();
+        String text = "Yes";
         startActivity(intent);
-        medicalHistory.source1.put("In an immediate emergency, do understand that treatment may be given without consent to prevent death or other serious harm?", text);
+        //medicalHistory.source1.put("In an immediate emergency, do understand that treatment may be given without consent to prevent death or other serious harm?", text);
     }
 
     public void sendMessageNo(View view) {
         Intent intent = new Intent(this, question2advdir.class);
-        intent.putExtra(EXTRA_MESSAGE, "");
-        Button button = (Button) findViewById(R.id.button7);
-        String text = (String)button.getText();
+        String text = "No";
         startActivity(intent);
-        medicalHistory.source1.put("In an immediate emergency, do understand that treatment may be given without consent to prevent death or other serious harm?", text);
+        //medicalHistory.source1.put("In an immediate emergency, do understand that treatment may be given without consent to prevent death or other serious harm?", text);
     }
 }
