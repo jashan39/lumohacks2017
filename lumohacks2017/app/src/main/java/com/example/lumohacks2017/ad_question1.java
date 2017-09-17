@@ -14,14 +14,14 @@ public class ad_question1 extends AppCompatActivity {
     }
 
     public void yesSendMessage(View view) {
-        medicalHistory.source1.put("If immediate treatment is required to prevent death or other serious harm to a patient, the treatment may be provided without informed consent.", "Yes");
-        Intent intent = new Intent(this, summaryAdvanced.class);
+        medicalHistory.source1.put("If immediate treatment is required to prevent death or other serious harm to a patient, the treatment may be provided without informed consent.", "Yes, I understand this!");
+        Intent intent = new Intent(this, ad_question2.class);
         startActivity(intent);
     }
 
     public void noSendMessage(View view) {
-        medicalHistory.source1.put("If immediate treatment is required to prevent death or other serious harm to a patient, the treatment may be provided without informed consent.", "No");
-        Intent intent = new Intent(this, summaryAdvanced.class);
+        medicalHistory.source1.put("If immediate treatment is required to prevent death or other serious harm to a patient, the treatment may be provided without informed consent.", "No, I don't understand this!");
+        Intent intent = new Intent(this, ad_question2.class);
         startActivity(intent);
     }
 

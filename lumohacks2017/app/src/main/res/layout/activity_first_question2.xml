@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="text|textPersonName"
-        android:text="Drug(s):"
+        android:hint="Drug(s):"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         tools:layout_editor_absoluteY="280dp"
