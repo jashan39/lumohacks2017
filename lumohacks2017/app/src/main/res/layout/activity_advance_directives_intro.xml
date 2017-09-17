@@ -10,7 +10,7 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Everyone should be allowed to make the important decisions regarding their health care"
+        android:text="Everyone should be allowed to make the important decisions regarding their health care."
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="100dp"
         android:layout_alignParentTop="true"
@@ -34,5 +34,6 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="21dp"
-        android:text="Start" />
+        android:text="Start"
+        android:onClick="startButton"/>
 </RelativeLayout>
