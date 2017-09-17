@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import static android.provider.AlarmClock.EXTRA_MESSAGE;
 import static com.example.lumohacks2017.medicalHistory.source;
+import static com.example.lumohacks2017.medicalHistory.source1;
 
 public class question5advdir extends AppCompatActivity {
 
@@ -27,7 +28,7 @@ public class question5advdir extends AppCompatActivity {
         Button button = (Button) findViewById(R.id.button8);
         String text = (String)button.getText();
         startActivity(intent);
-        source.put("In the case of an overdose, do you consent to being given additional medication(s)?", text);
+        source1.put("In the case of an overdose, do you consent to being given additional medication(s)?", text);
     }
 
     public void sendMessageNo(View view) {
@@ -36,7 +37,6 @@ public class question5advdir extends AppCompatActivity {
         Button button = (Button) findViewById(R.id.button7);
         String text = (String)button.getText();
         startActivity(intent);
-        source.put("In the case of an overdose, do you consent to being given additional medication(s)?", text);
-
+        source1.put("In the case of an overdose, do you consent to being given additional medication(s)?", text);
     }
 }

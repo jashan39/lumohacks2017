@@ -33,7 +33,7 @@ public class question1advdir extends AppCompatActivity {
         Button button = (Button) findViewById(R.id.button8);
         String text = (String)button.getText();
         startActivity(intent);
-        source.put("In an immediate emergency, do understand that treatment may be given without consent to prevent death or other serious harm?", text);
+        medicalHistory.source1.put("In an immediate emergency, do understand that treatment may be given without consent to prevent death or other serious harm?", text);
     }
 
     public void sendMessageNo(View view) {
@@ -42,7 +42,6 @@ public class question1advdir extends AppCompatActivity {
         Button button = (Button) findViewById(R.id.button7);
         String text = (String)button.getText();
         startActivity(intent);
-        source.put("In an immediate emergency, do understand that treatment may be given without consent to prevent death or other serious harm?", text);
-
+        medicalHistory.source1.put("In an immediate emergency, do understand that treatment may be given without consent to prevent death or other serious harm?", text);
     }
 }

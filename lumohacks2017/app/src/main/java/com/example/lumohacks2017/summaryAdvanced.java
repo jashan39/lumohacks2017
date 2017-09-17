@@ -13,28 +13,27 @@ import static com.example.lumohacks2017.medicalHistory.source;
 import static com.example.lumohacks2017.medicalHistory.summaryText;
 import static com.example.lumohacks2017.medicalHistory.summaryText1;
 
-public class medHistorySummary extends AppCompatActivity {
+public class summaryAdvanced extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_med_history_summary);
+        setContentView(R.layout.activity_summary_advanced);
 
-        TextView text = (TextView)findViewById(R.id.results);
-        Iterator it = source.entrySet().iterator();
+        TextView text = (TextView)findViewById(R.id.results21);
+        Iterator it = medicalHistory.source1.entrySet().iterator();
         while (it.hasNext()) {
             Map.Entry pair = (Map.Entry)it.next();
-            summaryText = summaryText + pair.getKey() + " : " + pair.getValue() + "\n\n";
+            summaryText1 = summaryText1 + pair.getKey() + " : " + pair.getValue() + "\n\n";
         }
-        text.setText(summaryText);
-
+        text.setText(summaryText1);
     }
 
     @Override
     public void onBackPressed() {
-        TextView text = (TextView)findViewById(R.id.results);
+        TextView text = (TextView)findViewById(R.id.results21);
         text.setText("");
-        summaryText = "";
+        summaryText1 = "";
         super.onBackPressed();
     }
 

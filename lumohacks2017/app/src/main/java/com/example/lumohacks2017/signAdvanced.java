@@ -39,7 +39,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-public class signActivity extends AppCompatActivity {
+public class signAdvanced extends AppCompatActivity {
 
     Button btn_get_sign, mClear, mGetSign, mCancel;
 
@@ -72,7 +72,7 @@ public class signActivity extends AppCompatActivity {
         }
 
         // Dialog Function
-        dialog = new Dialog(signActivity.this);
+        dialog = new Dialog(signAdvanced.this);
         // Removing the features of Normal Dialogs
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.dialog_signature);
@@ -93,7 +93,7 @@ public class signActivity extends AppCompatActivity {
     }
 
     public void sendMessage(View view) {
-        Intent intent = new Intent(this, advanceDirectivesIntro.class);
+        Intent intent = new Intent(this, ending.class);
         startActivity(intent);
     }
 
@@ -144,8 +144,7 @@ public class signActivity extends AppCompatActivity {
                     document.open();
 
                     Font f=new Font(Font.FontFamily.TIMES_ROMAN,15.0f);
-                    Paragraph p1 = new Paragraph(medicalHistory.summaryText, f);
-                    Paragraph p = new Paragraph();
+                    Paragraph p1 = new Paragraph(medicalHistory.summaryText1, f);
 
                     p1.setAlignment(Paragraph.ALIGN_CENTER);
                     document.add(p1);
@@ -169,7 +168,7 @@ public class signActivity extends AppCompatActivity {
                 // the attachment
                 emailIntent.putExtra(Intent.EXTRA_STREAM, path);
                 // the mail subject
-                emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Summary - Health Care No.: " + medicalHistory.healthcare_num);
+                emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Consent - Health Care No.: " + medicalHistory.healthcare_num);
                 startActivity(Intent.createChooser(emailIntent , "Send email..."));
 
             }

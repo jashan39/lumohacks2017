@@ -11,8 +11,10 @@ import java.util.IdentityHashMap;
 public class medicalHistory {
 
     public static HashMap<String, String> source = new HashMap<>();
+    public static HashMap<String, String> source1 = new HashMap<>();
 
     public static String summaryText = "";
+    public static String summaryText1 = "";
     public static String healthcare_num = "";
 
 /*

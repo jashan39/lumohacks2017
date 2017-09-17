@@ -13,7 +13,7 @@ public class advanceDirectivesIntro extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_advance_directives_intro);
-    }
+       }
 
     public void startButton(View view) {
         Intent intent = new Intent(this, question1advdir.class);
