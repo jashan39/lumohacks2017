@@ -25,7 +25,10 @@
         <activity android:name=".medHistorySummary" />
         <activity android:name=".advanceDirectivesIntro" />
         <activity android:name=".question1advdir" />
-        <activity android:name=".signActivity"></activity>
+        <activity android:name=".signActivity" />
+        <activity android:name=".summaryAdvanced" />
+        <activity android:name=".signAdvanced" />
+        <activity android:name=".ending"></activity>
     </application>
 
 </manifest>

@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import static android.provider.AlarmClock.EXTRA_MESSAGE;
 import static com.example.lumohacks2017.medicalHistory.source;
+import static com.example.lumohacks2017.medicalHistory.source1;
 
 public class question4advdir extends AppCompatActivity {
 
@@ -33,7 +34,7 @@ public class question4advdir extends AppCompatActivity {
         Button button = (Button) findViewById(R.id.button8);
         String text = (String)button.getText();
         startActivity(intent);
-        source.put("Do you understand that physical restraints and/or sedating medications may be needed if there is an immediate danger to the patient or others around them?", text);
+        source1.put("Do you understand that physical restraints and/or sedating medications may be needed if there is an immediate danger to the patient or others around them?", text);
     }
 
     public void sendMessageNo(View view) {
@@ -42,7 +43,7 @@ public class question4advdir extends AppCompatActivity {
         Button button = (Button) findViewById(R.id.button7);
         String text = (String)button.getText();
         startActivity(intent);
-        source.put("Do you understand that physical restraints and/or sedating medications may be needed if there is an immediate danger to the patient or others around them?", text);
+        source1.put("Do you understand that physical restraints and/or sedating medications may be needed if there is an immediate danger to the patient or others around them?", text);
 
     }
 }
