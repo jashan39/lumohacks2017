@@ -24,11 +24,11 @@
         android:background="@android:color/white">
 
         <Button
-            android:id="@+id/cancel"
+            android:id="@+id/getsign"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:text="@string/hint_cancel"
+            android:text="SEND"
             tools:ignore="ButtonStyle"
             android:textColor="@android:color/white"
             android:background="@color/ColorPrimary" />
@@ -44,11 +44,11 @@
             android:background="@color/ColorPrimary" />
 
         <Button
-            android:id="@+id/getsign"
+            android:id="@+id/cancel"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:text="@string/hint_save"
+            android:text="NEXT"
             tools:ignore="ButtonStyle"
             android:textColor="@android:color/white"
             android:background="@color/ColorPrimary" />

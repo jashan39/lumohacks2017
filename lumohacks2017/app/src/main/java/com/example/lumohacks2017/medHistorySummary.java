@@ -13,7 +13,6 @@ import java.util.Map;
 import static android.provider.AlarmClock.EXTRA_MESSAGE;
 import static com.example.lumohacks2017.medicalHistory.source;
 import static com.example.lumohacks2017.medicalHistory.summaryText;
-
 public class medHistorySummary extends AppCompatActivity {
 
     @Override
@@ -39,9 +38,9 @@ public class medHistorySummary extends AppCompatActivity {
         super.onBackPressed();
     }
 
-    public void sendMessage(View view) {
-        Intent intent = new Intent(this, advanceDirectivesIntro.class);
-        intent.putExtra(EXTRA_MESSAGE, "");
+    public void signnow(View view) {
+        Intent intent = new Intent(this, signActivity.class);
         startActivity(intent);
     }
+
 }

@@ -29,14 +29,13 @@ import com.itextpdf.text.pdf.PdfWriter;
 
 import java.io.File;
 import java.io.FileOutputStream;
-import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-public class MainActivity extends AppCompatActivity {
+public class signActivity extends AppCompatActivity {
 
-    Button btn_get_sign, mClear, mGetSign;
+    Button btn_get_sign, mClear, mGetSign, mCancel;
 
     File file;
     Dialog dialog;
@@ -44,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
     View view;
     signature mSignature;
     Bitmap bitmap;
+    int counter = 1;
 
     // Creating Separate Directory for saving Generated Images
     String DIRECTORY = Environment.getExternalStorageDirectory().getPath() + "/DigitSign/";
@@ -55,10 +55,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        // Button to open signature panel
-        btn_get_sign = (Button) findViewById(R.id.signature);
+        setContentView(R.layout.activity_sign);
 
         // Method to create Directory, if the Directory doesn't exists
         file = new File(DIRECTORY);
@@ -67,12 +64,15 @@ public class MainActivity extends AppCompatActivity {
         }
 
         // Dialog Function
-        dialog = new Dialog(MainActivity.this);
+        dialog = new Dialog(signActivity.this);
         // Removing the features of Normal Dialogs
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.dialog_signature);
         dialog.setCancelable(true);
 
+        dialog_action();
+
+        /*
         btn_get_sign.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -81,7 +81,14 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        */
     }
+
+    public void sendMessage(View view) {
+        Intent intent = new Intent(this, advanceDirectivesIntro.class);
+        startActivity(intent);
+    }
+
 
     public void firstQuestion(View view) {
         Intent intent = new Intent(this, firstQuestion.class);
@@ -99,6 +106,7 @@ public class MainActivity extends AppCompatActivity {
         mClear = (Button) dialog.findViewById(R.id.clear);
         mGetSign = (Button) dialog.findViewById(R.id.getsign);
         mGetSign.setEnabled(false);
+        mCancel = (Button) dialog.findViewById(R.id.cancel);
         view = mContent;
 
         mClear.setOnClickListener(new View.OnClickListener() {
@@ -108,10 +116,10 @@ public class MainActivity extends AppCompatActivity {
                 mGetSign.setEnabled(false);
             }
         });
+
         mGetSign.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
-
 
                 Log.v("tag", "Panel Saved");
                 view.setDrawingCacheEnabled(true);
@@ -145,9 +153,15 @@ public class MainActivity extends AppCompatActivity {
                 // the mail subject
                 emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Health Care No.: 9AS35FNS3F");
                 startActivity(Intent.createChooser(emailIntent , "Send email..."));
+
             }
         });
 
+        mCancel.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                sendMessage(view);
+            }
+        });
         dialog.show();
     }
 

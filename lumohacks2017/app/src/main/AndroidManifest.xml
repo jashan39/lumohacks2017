@@ -24,7 +24,8 @@
         <activity android:name=".thirdQuestion" />
         <activity android:name=".medHistorySummary" />
         <activity android:name=".advanceDirectivesIntro" />
-        <activity android:name=".question1advdir"></activity>
+        <activity android:name=".question1advdir" />
+        <activity android:name=".signActivity"></activity>
     </application>
 
 </manifest>
