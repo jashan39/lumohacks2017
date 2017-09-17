@@ -36,7 +36,6 @@
         android:text="Next"
         tools:layout_editor_absoluteY="539dp"
         tools:layout_editor_absoluteX="161dp"
-        android:onClick="sendMessage"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="17dp" />

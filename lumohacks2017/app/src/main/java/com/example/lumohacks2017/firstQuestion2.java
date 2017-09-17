@@ -31,6 +31,7 @@ public class firstQuestion2 extends AppCompatActivity {
                     {
                         String text = editText.getText().toString();
                         source.put("Do you have any drug allergies?", text);
+                        sendMessageYes(view);
                     }
                 });
     }

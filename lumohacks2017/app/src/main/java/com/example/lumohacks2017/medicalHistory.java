@@ -12,6 +12,8 @@ public class medicalHistory {
 
     public static HashMap<String, String> source = new HashMap<>();
 
+    public static String summaryText = "";
+
     public HashMap getMap(){
         return source;
     }

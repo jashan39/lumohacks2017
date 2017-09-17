@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.lumohacks2017">
 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -23,7 +23,8 @@
         <activity android:name=".firstQuestion2" />
         <activity android:name=".thirdQuestion" />
         <activity android:name=".medHistorySummary" />
-        <activity android:name=".advanceDirectivesIntro"></activity>
+        <activity android:name=".advanceDirectivesIntro" />
+        <activity android:name=".question1advdir"></activity>
     </application>
 
 </manifest>
