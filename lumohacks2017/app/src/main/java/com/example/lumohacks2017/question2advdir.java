@@ -12,37 +12,38 @@ import android.widget.TextView;
 import static android.provider.AlarmClock.EXTRA_MESSAGE;
 import static com.example.lumohacks2017.medicalHistory.source;
 
-public class question1advdir extends AppCompatActivity {
+public class question2advdir extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_question1advdir);
+        setContentView(R.layout.activity_question2advdir);
 
         TextView readMore = (TextView) findViewById(R.id.textView6);
         readMore.setText(
                 Html.fromHtml(
-                        "Despite its importance, the duty to obtain the patient's informed consent to treatment is not absolute. " +
-                                "One prominent exception refers directly to emergency care. " + "<a href=\"http://www.emed.theclinics.com/article/S0733-8627(05)70062-6/abstract\">Read more...</a>"));
+                        "A physical restraint is used when a patient’s safety is at risk. For instance: a patient " +
+                                "at risk of falling; hurting them self or others; pulling out tubes; or acting in an " +
+                                "aggressive or violent way. " + "<a href=\"http://www.muhcpatienteducation.ca/DATA/GUIDE/349_en~v~patient-safety-and-physical-restraint.pdf\">Read more...</a>"));
         readMore.setMovementMethod(LinkMovementMethod.getInstance());
     }
 
     public void sendMessageYes(View view) {
-        Intent intent = new Intent(this, question2advdir.class);
+        Intent intent = new Intent(this, question3advdir.class);
         intent.putExtra(EXTRA_MESSAGE, "");
         Button button = (Button) findViewById(R.id.button8);
         String text = (String)button.getText();
         startActivity(intent);
-        source.put("In an immediate emergency, do understand that treatment may be given without consent to prevent death or other serious harm?", text);
+        source.put("Do you understand that physical restraints and/or sedating medications may be needed if there is an immediate danger to the patient or others around them?", text);
     }
 
     public void sendMessageNo(View view) {
-        Intent intent = new Intent(this, question2advdir.class);
+        Intent intent = new Intent(this, question3advdir.class);
         intent.putExtra(EXTRA_MESSAGE, "");
         Button button = (Button) findViewById(R.id.button7);
         String text = (String)button.getText();
         startActivity(intent);
-        source.put("In an immediate emergency, do understand that treatment may be given without consent to prevent death or other serious harm?", text);
+        source.put("Do you understand that physical restraints and/or sedating medications may be needed if there is an immediate danger to the patient or others around them?", text);
 
     }
 }

@@ -4,31 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.lumohacks2017.question1advdir">
+    tools:context="com.example.lumohacks2017.question3advdir">
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="If immediate treatment is required to prevent death or other serious harm to a patient, the treatment may be provided without informed consent."
-        android:layout_marginBottom="31dp"
-        android:layout_above="@+id/textView5"
-        android:layout_alignParentStart="true" />
+        android:text="In the case of an overdose, the stomach may be washed out by gastric lavage (stomach pumping) to mechanically remove unabsorbed drugs from the stomach."
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="131dp" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Do you understand this?"
-        android:layout_marginBottom="73dp"
-        android:layout_above="@+id/button8"
-        android:layout_centerHorizontal="true" />
+        android:text="Do you consent to this?"
+        android:layout_below="@+id/textView4"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="56dp" />
 
     <Button
         android:id="@+id/button7"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="No, I don't understand."
+        android:text="No, I don't want this."
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="12dp"
@@ -40,16 +40,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/button7"
         android:layout_alignStart="@+id/button7"
-        android:text="Yes, I understand."
+        android:text="Yes, I want this."
         android:onClick="sendMessageYes"/>
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:text="Despite its importance, the duty to obtain the patient's informed consent to treatment is not absolute. One prominent exception refers directly to emergency care. Read more..." />
 
 </RelativeLayout>
