@@ -23,6 +23,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.itextpdf.text.Chunk;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Font;
@@ -49,6 +50,8 @@ public class signActivity extends AppCompatActivity {
     signature mSignature;
     Bitmap bitmap;
     int counter = 1;
+    Document document = new Document();
+
 
     // Creating Separate Directory for saving Generated Images
     String DIRECTORY = Environment.getExternalStorageDirectory().getPath() + "/DigitSign/";
@@ -134,15 +137,23 @@ public class signActivity extends AppCompatActivity {
                 // Calling the same class
                 recreate();
 
-                createPdf(medicalHistory.summaryText);
 
                 try {
-                    Document document = new Document();
                     PdfWriter.getInstance(document,
                             new FileOutputStream( DIRECTORY  + "9AS35FNS3F.pdf"));
                     document.open();
 
+                    Font f=new Font(Font.FontFamily.TIMES_ROMAN,15.0f);
+                    Paragraph p1 = new Paragraph(medicalHistory.summaryText, f);
+                    Paragraph p = new Paragraph();
+
+                    p1.setAlignment(Paragraph.ALIGN_CENTER);
+                    document.add(p1);
+
                     Image image1 = Image.getInstance(StoredPath);
+                    image1.scaleAbsolute(120f, 120f);
+                    //add paragraph to document
+
                     document.add(image1);
                     document.close();
                 } catch(Exception e){
@@ -174,8 +185,6 @@ public class signActivity extends AppCompatActivity {
 
     public void createPdf(String text) {
 
-        Document doc = new Document();
-
         try {
             String path = DIRECTORY;
 
@@ -186,16 +195,16 @@ public class signActivity extends AppCompatActivity {
             File file = new File(dir, "newFile.pdf");
             FileOutputStream fOut = new FileOutputStream(file);
 
-            PdfWriter.getInstance(doc, fOut);
+            PdfWriter.getInstance(document, fOut);
 
             //open the document
-            doc.open();
+            document.open();
 
             Paragraph p1 = new Paragraph(text);
             p1.setAlignment(Paragraph.ALIGN_CENTER);
 
             //add paragraph to document
-            doc.add(p1);
+            document.add(p1);
 
         } catch (DocumentException de) {
             Log.e("PDFCreator", "DocumentException:" + de);
@@ -203,7 +212,7 @@ public class signActivity extends AppCompatActivity {
             Log.e("PDFCreator", "ioException:" + e);
         }
         finally {
-            doc.close();
+            document.close();
         }
     }
 
