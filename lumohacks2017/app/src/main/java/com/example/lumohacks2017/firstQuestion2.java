@@ -8,29 +8,20 @@ import android.widget.TextView;
 
 import static android.provider.AlarmClock.EXTRA_MESSAGE;
 
-public class firstQuestion extends AppCompatActivity {
+public class firstQuestion2 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_first_question);
+        setContentView(R.layout.activity_first_question2);
 
-        TextView firstQuestion = (TextView) findViewById(R.id.question1);
-        firstQuestion.setText("Do you have any drug allergies?");
+        TextView firstQuestionPart2 = (TextView) findViewById(R.id.question1part2);
+        firstQuestionPart2.setText("What drug(s)?");
     }
 
-    public void sendMessageYes(View view) {
-        Intent intent = new Intent(this, firstQuestion2.class);
-        intent.putExtra(EXTRA_MESSAGE, "");
-        startActivity(intent);
-    }
-
-    public void sendMessageNo(View view) {
+    public void sendMessage(View view) {
         Intent intent = new Intent(this, secondQuestion.class);
         intent.putExtra(EXTRA_MESSAGE, "");
         startActivity(intent);
     }
-
-
-
 }

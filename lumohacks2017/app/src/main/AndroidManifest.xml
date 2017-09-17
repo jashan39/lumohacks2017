@@ -16,7 +16,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".firstQuestion"></activity>
+        <activity android:name=".firstQuestion" />
+        <activity android:name=".secondQuestion" />
+        <activity android:name=".firstQuestion2" />
+        <activity android:name=".thirdQuestion" />
+        <activity android:name=".medHistorySummary" />
+        <activity android:name=".advanceDirectivesIntro"></activity>
     </application>
 
 </manifest>

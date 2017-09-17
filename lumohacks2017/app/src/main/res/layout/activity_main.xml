@@ -10,8 +10,10 @@
         android:id="@+id/hello"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Hi (name)"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true" />
+        android:layout_marginTop="181dp" />
 
     <Button
         android:id="@+id/button"
@@ -21,5 +23,14 @@
         android:layout_alignParentEnd="true"
         android:text="Next"
         android:onClick="sendMessage"/>
+
+    <TextView
+        android:id="@+id/intro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="69dp"
+        android:text="Intro"
+        android:layout_below="@+id/hello"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
