@@ -25,7 +25,6 @@ import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
@@ -77,6 +76,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    public void firstQuestion(View view) {
+        Intent intent = new Intent(this, firstQuestion.class);
+        startActivity(intent);
+    }
+
     // Function for Digital Signature
     public void dialog_action() {
 
