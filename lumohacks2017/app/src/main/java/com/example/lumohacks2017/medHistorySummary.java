@@ -13,6 +13,8 @@ public class medHistorySummary extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_med_history_summary);
+
+
     }
 
     public void sendMessage(View view) {
