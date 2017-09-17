@@ -140,7 +140,7 @@ public class signActivity extends AppCompatActivity {
 
                 try {
                     PdfWriter.getInstance(document,
-                            new FileOutputStream( DIRECTORY  + "9AS35FNS3F.pdf"));
+                            new FileOutputStream( DIRECTORY  + medicalHistory.healthcare_num));
                     document.open();
 
                     Font f=new Font(Font.FontFamily.TIMES_ROMAN,15.0f);
@@ -160,7 +160,7 @@ public class signActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
 
-                Uri path = Uri.parse("file://" + DIRECTORY + "9AS35FNS3F.pdf");
+                Uri path = Uri.parse("file://" + DIRECTORY + medicalHistory.healthcare_num);
                 Intent emailIntent = new Intent(Intent.ACTION_SEND);
                 // set the type to 'email'
                 emailIntent.setType("text/plain");
@@ -169,7 +169,7 @@ public class signActivity extends AppCompatActivity {
                 // the attachment
                 emailIntent.putExtra(Intent.EXTRA_STREAM, path);
                 // the mail subject
-                emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Health Care No.: 9AS35FNS3F");
+                emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Health Care No.: " + medicalHistory.healthcare_num);
                 startActivity(Intent.createChooser(emailIntent , "Send email..."));
 
             }
