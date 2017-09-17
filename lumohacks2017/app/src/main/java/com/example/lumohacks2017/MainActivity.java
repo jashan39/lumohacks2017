@@ -24,9 +24,12 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.itextpdf.text.Document;
+import com.itextpdf.text.Image;
+import com.itextpdf.text.pdf.PdfWriter;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
@@ -45,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
     // Creating Separate Directory for saving Generated Images
     String DIRECTORY = Environment.getExternalStorageDirectory().getPath() + "/DigitSign/";
     String pic_name = new SimpleDateFormat("yyyyMMdd", Locale.getDefault()).format(new Date());
+    String pdfPath = DIRECTORY;
     String StoredPath = DIRECTORY + pic_name + ".png";
     String email_file = StoredPath;
 
@@ -53,7 +57,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Document doc = new Document();
         // Button to open signature panel
         btn_get_sign = (Button) findViewById(R.id.signature);
 
@@ -118,19 +121,34 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Successfully Saved", Toast.LENGTH_SHORT).show();
                 // Calling the same class
                 recreate();
-                Uri path = Uri.parse("file://" + email_file);
+
+                try {
+                    Document document = new Document();
+                    PdfWriter.getInstance(document,
+                            new FileOutputStream( DIRECTORY  + "9AS35FNS3F.pdf"));
+                    document.open();
+
+                    Image image1 = Image.getInstance(StoredPath);
+                    document.add(image1);
+                    document.close();
+                } catch(Exception e){
+                    e.printStackTrace();
+                }
+
+                Uri path = Uri.parse("file://" + DIRECTORY + "9AS35FNS3F.pdf");
                 Intent emailIntent = new Intent(Intent.ACTION_SEND);
-// set the type to 'email'
-                emailIntent.setType("image/*");
+                // set the type to 'email'
+                emailIntent.setType("text/plain");
                 String to[] = {"yangjy259@gmail.com"};
                 emailIntent.putExtra(Intent.EXTRA_EMAIL, to);
-// the attachment
+                // the attachment
                 emailIntent.putExtra(Intent.EXTRA_STREAM, path);
-// the mail subject
+                // the mail subject
                 emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Health Care No.: 9AS35FNS3F");
                 startActivity(Intent.createChooser(emailIntent , "Send email..."));
             }
         });
+
         mCancel.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Log.v("tag", "Panel Cancelled");
